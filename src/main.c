@@ -8,11 +8,11 @@ u8 main(){
         return 0;
     }
 
-    pchar *str_ptr = (pchar *)0x0202298C;
+    pchar *str_ptr = (pchar *)0x0202298C; //str buffer
     while(*str_ptr != 0xFB){
         str_ptr++;
     }
-    memcpy(str_ptr, &new_msg, 35);
+    pstrcpy(str_ptr, &new_msg);
     clear_flag(CONFIGURED_FLAG);
     return 1;
 }
