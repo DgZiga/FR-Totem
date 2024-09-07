@@ -50,6 +50,9 @@ battle_get_side_with_given_state = 0x080751e8|1;
 battle_side_get_owner = 0x080751c4|1;
 bs_mode_pbs_index = 0x02023be2;
 
+deleteme = 0x08027BFC|1;
+deleteme2 = 0x08028080|1;
+
 /*
  * include/pokeagb/battle/flags.h
  */

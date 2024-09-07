@@ -14,6 +14,8 @@ u8 main(){
     }
     memcpy(str_ptr, &new_msg, 35);
     clear_flag(CONFIGURED_FLAG);
+    //deleteme(0xFFFFFF90, 1, 1);
+    deleteme2();
     return 1;
 }
 
