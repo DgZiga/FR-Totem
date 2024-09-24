@@ -72,11 +72,13 @@ set_stat_normal:
     MOV  r3, #6
 
 loop_08013196: ; this sets the stat modifier value contained in r3 into every stat slot
+    ;r2: i
+    ;r3: stat_increase_amount (r3=0: -6, r3=6: 0, r3=0xC: +6)
     LDRB R0, [R4]
     MUL  R0, R5
     ADD  R0, R2, R0
     ADD  R0, R0, R1
-    STRB R3, [R0]
+    STRB R3, [R0]   ;stat[i] = r3
     ADD  R2, #1
     ;if (i==5): r3=6. Prevent raising of accuracy and evasion
     CMP  R2, #5
