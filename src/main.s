@@ -78,6 +78,10 @@ loop_08013196: ; this sets the stat modifier value contained in r3 into every st
     ADD  R0, R0, R1
     STRB R3, [R0]
     ADD  R2, #1
+    ;if (i==5): r3=6. Prevent raising of accuracy and evasion
+    CMP  R2, #5
+    BEQ  set_stat_normal
+    ;if (i<7): goto loop_08013196
     CMP  R2, #7
     BLE  loop_08013196
 
