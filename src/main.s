@@ -69,6 +69,7 @@ hijack:
 
 set_stat_normal:
     POP {r0-r5}
+set_stat_to_6:
     MOV  r3, #6
 
 loop_08013196: ; this sets the stat modifier value contained in r3 into every stat slot
@@ -82,7 +83,7 @@ loop_08013196: ; this sets the stat modifier value contained in r3 into every st
     ADD  R2, #1
     ;if (i==5): r3=6. Prevent raising of accuracy and evasion
     CMP  R2, #5
-    BEQ  set_stat_normal
+    BEQ  set_stat_to_6
     ;if (i<7): goto loop_08013196
     CMP  R2, #7
     BLE  loop_08013196
